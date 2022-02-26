@@ -10,18 +10,20 @@ sap.ui.define([
         "use strict";
 
         function onBeforeRendering(){
+           
             this._wizard = this.byId("wizard");
-            //Se crea el modelo principal que contendrá todos los datos
+
             this._model = new sap.ui.model.json.JSONModel({});
             this.getView().setModel(this._model);
-            //Se reseta los pasos por si ya se ha ejecutado la aplicacion antes
+
+            //Reset de los pasos
             var oFirstStep = this._wizard.getSteps()[0];
             this._wizard.discardProgress(oFirstStep);
             // scroll to top
             this._wizard.goToStep(oFirstStep);
             // invalidate first step
             oFirstStep.setValidated(false);
-            //
+            
         };
 
         //Se activa el paso 2
@@ -31,7 +33,7 @@ sap.ui.define([
             //Step 2
             var typeEmployeeStep = this.byId("typeEmployeeStep");
             
-            //Se obtiene el tipo seleccionado con el "CustomData"
+            
             var button = oEvent.getSource();
             var typeEmployee = button.data("typeEmployee");
             
@@ -57,18 +59,18 @@ sap.ui.define([
                     break;
             }
             
-            //Al pulsar sobre el tipo, se sobreescribe el modelo registrando el tipo  y el valor del salario por defecto
+            
             this._model.setData({
                 _type : typeEmployee,
                 Type : Type,
                 _Salary : Salary
 		    });
 		
-            //Se comprueba si se está en el paso 1, ya que se debe usar la función "nextStep" para activar el paso 2.
+            
             if(this._wizard.getCurrentStep() === typeEmployeeStep.getId()){
                 this._wizard.nextStep();
             }else{
-            // En caso de que ya se encuentre activo el paso 2, se navega directamente a este paso 
+            
                 this._wizard.goToStep(dataEmployeeStep);
             }
 	    };

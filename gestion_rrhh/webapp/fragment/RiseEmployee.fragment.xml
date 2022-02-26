@@ -23,7 +23,7 @@
 							<f:formElements>
 								<f:FormElement label="{i18n>salario}">
 									<f:fields>
-										<Input value="{newRise>/Ammount}" id="name"/>
+										<Input value="{newRise>/Amount}" id="name"/>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="{i18n>fecha}">

@@ -85,7 +85,7 @@
 								content="{employeeModel>UserToSalary}">
 								<suite:content>
 									<suite:TimelineItem
-										userName="{parts:[{path:'employeeModel>Ammount'},{path:'employeeModel>Waers'}],
+										userName="{parts:[{path:'employeeModel>Amount'},{path:'employeeModel>Waers'}],
 												type: 'sap.ui.model.type.Currency',
 												formatOptions: {showMeasure: false}}"
 										icon="sap-icon://circle-task"

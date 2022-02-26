@@ -65,8 +65,12 @@ sap.ui.define([
                             this.getView().getModel("employeeModel").remove("/Users(EmployeeId='" + this.employeeId + "',SapId='"+this.getOwnerComponent().SapId+"')",{
                                 success : function(data){
                                     sap.m.MessageToast.show(this.getView().getModel("i18n").getResourceBundle().getText("seHaEliminadoUsuario"));
-                                    //En el detalle se muestra el mensaje "Seleecione empleado"
+                                   var oList = this.getView().byId("listEmployees");
+                                   var oBinding = oList.getBinding("items");
+                                   oBinding.refresh();
+                                    //En el detalle se muestra el mensaje "Seleccione empleado"
                                     this._splitAppEmployee.to(this.createId("detailSelectEmployee"));
+
                                 }.bind(this),
                                 error : function(e){
                                     sap.base.Log.info(e);
