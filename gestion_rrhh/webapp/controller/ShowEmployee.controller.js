@@ -156,7 +156,7 @@ sap.ui.define([
         }
         function downloadFile(oEvent){
             var sPath = oEvent.getSource().getBindingContext("employeeModel").getPath();
-            window.open("/sap/opu/odata/sap/ZEMPLOYEES_SRV"+sPath+"/$value");
+            window.open("sap/opu/odata/sap/ZEMPLOYEES_SRV"+sPath+"/$value");
         }
         return Controller.extend("logaligroup.gestionrrhh.controller.ShowEmployee", {
             onInit: onInit,

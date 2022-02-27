@@ -53,7 +53,7 @@
                                         multiple="true"
                                         sameFilenameAllowed="true"
                                         instantUpload="true"
-                                        uploadUrl="/sap/opu/odata/sap/ZEMPLOYEES_SRV/Attachments"
+                                        uploadUrl="sap/opu/odata/sap/ZEMPLOYEES_SRV/Attachments"
                                         items="{employeeModel>UserToAttachment}"
                                         change="onFileChange"
                                         uploadComplete="onFileUploadComplete"
